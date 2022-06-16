@@ -37,11 +37,10 @@ def intro():
             returned[i] = True
         else:
             returned[i] = False
-
     return returned
 
 def main():
     values = intro()
-    print(values)
+    
 if __name__ == "__main__":
     main()
