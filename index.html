@@ -3,7 +3,7 @@
   <head>
     <title>Praval's First Web Page</title>
     <style>
-      img {
+      img.MyPicture {
         width: 100px;
         border-radius: 50px;
         float: left;
@@ -12,13 +12,25 @@
       p.Username {
         font-weight: bold;
       }
+      img.monkey {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        float: left;
+        margin-right: 10px;
+      }
     </style>
   </head>
   <body>
-    <img src="Images/PurduePic.jpg" alt="An image of Praval Kollipara" />
+    <img
+      class="MyPicture"
+      src="Images/PurduePic.jpg"
+      alt="An image of Praval Kollipara"
+    />
     <p class="Username">GitHub: pkollip</p>
     <p class="Bio">
       My passion lies in the problems that programming can solve!
     </p>
+    <img class="monkey" src="Images/Monkey.jpg" alt="" />
   </body>
 </html>
