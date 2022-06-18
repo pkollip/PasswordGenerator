@@ -55,9 +55,9 @@ def main():
             for x in range(int(length)):
                 password.append(random.choice(string.digits + string.ascii_letters + string.punctuation))
     elif (not symbols and numbers):
-    
-    elif (not numbers and symbols):
         
+    elif (not numbers and symbols):
+
     print("".join(password))
     #if (lowercase and uppercase):
      #   password.append(random.choice(string.ascii_letters) for x in range())
