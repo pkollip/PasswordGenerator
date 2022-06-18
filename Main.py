@@ -48,8 +48,19 @@ def main():
     num_numbers = int(length) - num_symbols
     password = []
 
-    if (lowercase and uppercase):
-        password.append(random.choice(string.ascii_letters) for x in range())
+    if (lowercase and uppercase and symbols and numbers):
+        if (similar):
+            password = random.sample(string.digits + string.ascii_letters + string.punctuation, int(length))
+        else:
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_letters + string.punctuation))
+    elif (not symbols and numbers):
+    
+    elif (not numbers and symbols):
+        
+    print("".join(password))
+    #if (lowercase and uppercase):
+     #   password.append(random.choice(string.ascii_letters) for x in range())
 
 if __name__ == "__main__":
     main()
