@@ -44,8 +44,6 @@ def intro():
 
 def main():
     [length, symbols, numbers, lowercase, uppercase, similar] = intro()
-    num_symbols = random.randint(0,int(length))
-    num_numbers = int(length) - num_symbols
     password = []
 
     if (lowercase and uppercase and symbols and numbers):
@@ -55,9 +53,25 @@ def main():
             for x in range(int(length)):
                 password.append(random.choice(string.digits + string.ascii_letters + string.punctuation))
     elif (not symbols and numbers):
-        
+        if (lowercase and uppercase):
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_letters))
+        elif (not lowercase and uppercase):
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_uppercase))
+        elif (lowercase and not uppercase):
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_lowercase))
     elif (not numbers and symbols):
-
+        if (lowercase and uppercase):
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_letters))
+        elif (not lowercase and uppercase):
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_uppercase))
+        elif (lowercase and not uppercase):
+            for x in range(int(length)):
+                password.append(random.choice(string.digits + string.ascii_lowercase))
     print("".join(password))
     #if (lowercase and uppercase):
      #   password.append(random.choice(string.ascii_letters) for x in range())
