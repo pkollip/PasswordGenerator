@@ -1,3 +1,6 @@
+import random
+import string
+
 """
 Author: Praval Kollipara
 
@@ -40,7 +43,13 @@ def intro():
     return returned
 
 def main():
-    values = intro()
-    
+    [length, symbols, numbers, lowercase, uppercase, similar] = intro()
+    num_symbols = random.randint(0,int(length))
+    num_numbers = int(length) - num_symbols
+    password = []
+
+    if (lowercase and uppercase):
+        password.append(random.choice(string.ascii_letters) for x in range())
+
 if __name__ == "__main__":
     main()
