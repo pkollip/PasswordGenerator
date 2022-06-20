@@ -52,13 +52,22 @@ def main():
     [length, symbols, numbers, lowercase, uppercase] = intro()
     password = []
 
-    for i in random.sample(string.punctuation, int(symbols)):
+    for i in random.sample(string.punctuation, symbols):
         password.append(i)
-    for i in random.sample(string.digits, int(numbers)):
+    for i in random.sample(string.digits, numbers):
         password.append(i)
 
-
-   # if (uppercase and lowercase):
+    if (lowercase and uppercase):
+        for i in random.sample(string.ascii_letters, length - (symbols + numbers)):
+            password.append(i)
+    elif (lowercase):
+        for i in random.sample(string.ascii_lowercase, length - (symbols + numbers)):
+            password.append(i)
+    elif (uppercase):
+        for i in random.sample(string.ascii_uppercase, length - (symbols + numbers)):
+            password.append(i)
+    else:
+        print("Your length for the password will be " + str(symbols + numbers) + ".")
 
 
 if __name__ == "__main__":
