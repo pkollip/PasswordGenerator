@@ -1,5 +1,6 @@
 import random
 import string
+import math
 
 """
 Author: Praval Kollipara
@@ -27,15 +28,20 @@ Academic Integrity Statement:
     submitting is my own original work.
 """
 def intro():
+    length = 0
+    symbols = math.inf
+    numbers = math.inf
+
     print("Welcome to the password generator!\n")
-    length = input("What would you like the length of the password to be?\n")
-    symbols = input("Would you like the password to include symbols? (Y/N)\n")
-    numbers = input("Would you like the password to include numbers? (Y/N)\n")
+    length = int(input("What would you like the length of the password to be?\n"))
+    while (symbols >= length):
+        symbols = int(input("How many symbols would you like?\n"))
+    while (numbers >= (length - symbols)):
+        numbers = int(input("How many numbers would you like?\n"))
     lowercase = input("Would you like the password to include lowercase letters? (Y/N)\n")
     uppercase = input("Would you like the password to include uppercase letters? (Y/N)\n")
-    similar = input("Should the password exclude similar characters? (Y/N)\n")
-    returned = [length, symbols, numbers, lowercase, uppercase, similar]
-    for i in range(1, len(returned)):
+    returned = [length, symbols, numbers, lowercase, uppercase]
+    for i in range(3, len(returned)):
         if returned[i] == "Y" or returned[i] == "y":
             returned[i] = True
         else:
@@ -43,38 +49,17 @@ def intro():
     return returned
 
 def main():
-    [length, symbols, numbers, lowercase, uppercase, similar] = intro()
+    [length, symbols, numbers, lowercase, uppercase] = intro()
     password = []
 
-    if (lowercase and uppercase and symbols and numbers):
-        if (similar):
-            password = random.sample(string.digits + string.ascii_letters + string.punctuation, int(length))
-        else:
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_letters + string.punctuation))
-    elif (not symbols and numbers):
-        if (lowercase and uppercase):
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_letters))
-        elif (not lowercase and uppercase):
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_uppercase))
-        elif (lowercase and not uppercase):
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_lowercase))
-    elif (not numbers and symbols):
-        if (lowercase and uppercase):
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_letters))
-        elif (not lowercase and uppercase):
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_uppercase))
-        elif (lowercase and not uppercase):
-            for x in range(int(length)):
-                password.append(random.choice(string.digits + string.ascii_lowercase))
-    print("".join(password))
-    #if (lowercase and uppercase):
-     #   password.append(random.choice(string.ascii_letters) for x in range())
+    for i in random.sample(string.punctuation, int(symbols)):
+        password.append(i)
+    for i in random.sample(string.digits, int(numbers)):
+        password.append(i)
+
+
+   # if (uppercase and lowercase):
+
 
 if __name__ == "__main__":
     main()
