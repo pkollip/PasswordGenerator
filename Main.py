@@ -69,6 +69,8 @@ def main():
     else:
         print("Your length for the password will be " + str(symbols + numbers) + ".")
 
+    random.shuffle(password)
+    print("".join(password))
 
 if __name__ == "__main__":
     main()
