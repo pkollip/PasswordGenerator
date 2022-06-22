@@ -19,6 +19,9 @@
         font-size: x-large;
         font-weight: bold;
       }
+      form {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -28,5 +31,31 @@
       alt="Image of a Password with Random HEX values"
     />
     <p class="Heading">Password Generator</p>
+    <form>
+      <label for="length"
+        >What would you like the length of the password to be?</label
+      ><br />
+      <input type="text" id="length" name="length" /><br />
+      <label for="symbols">How many symbols would you like?</label><br />
+      <input type="text" id="symbols" name="symbols" /><br />
+      <label for="digits">How many digits would you like?</label><br />
+      <input type="text" id="digits" name="digits" /><br />
+      <p>Would you like Lowercase, Uppercase, or Both?</p>
+      <input
+        type="checkbox"
+        id="lowercase"
+        name="lowercase"
+        value="lowercase"
+      />
+      <label for="lowercase">Lowercase</label><br />
+      <input
+        type="checkbox"
+        id="uppercase"
+        name="uppercase"
+        value="uppercase"
+      />
+      <label for="uppercase">Uppercase</label><br />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
 </html>
