@@ -5,58 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-    <style>
-      img.Title {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 150px;
-        height: 150px;
-        object-fit: contain;
-      }
-      p.Heading {
-        text-align: center;
-        font-size: x-large;
-        font-weight: bold;
-      }
-      form {
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style type="text/css" src="Front-End.css"></style>
   </head>
   <body>
+    <div class="Container">
     <img
       class="Title"
       src="Images/password_entry_amid_binary_code_by_matejmo_gettyimages-808422590_cso_nw_2400x1600-100855218-orig-1.webp"
       alt="Image of a Password with Random HEX values"
     />
-    <p class="Heading">Password Generator</p>
-    <form>
-      <label for="length"
-        >What would you like the length of the password to be?</label
-      ><br />
-      <input type="text" id="length" name="length" /><br />
-      <label for="symbols">How many symbols would you like?</label><br />
-      <input type="text" id="symbols" name="symbols" /><br />
-      <label for="digits">How many digits would you like?</label><br />
-      <input type="text" id="digits" name="digits" /><br />
-      <p>Would you like Lowercase, Uppercase, or Both?</p>
-      <input
-        type="checkbox"
-        id="lowercase"
-        name="lowercase"
-        value="lowercase"
-      />
-      <label for="lowercase">Lowercase</label><br />
-      <input
-        type="checkbox"
-        id="uppercase"
-        name="uppercase"
-        value="uppercase"
-      />
-      <label for="uppercase">Uppercase</label><br />
-      <button id="submit">Submit</button>
+    <div class = "Header">    
+      <h2 >Password Generator</h2>
+    </div>
+
+    <form class = "Form" id="Form">
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+      <div class="form-control">
+      <label>What would you like the length of the password to be?</label><br />
+      <input type="length" placeholder = "9" id="length"/>
+      <i class="fa fa-check-circle" aria-hidden="true"></i><br />
+      <small>Not a Valid Value!</small>
+      </div>
+
+      <div class="form-control">
+        <label>How many symbols would you like?</label><br />
+        <input type="symbols" placeholder = "3" id="symbols"/>
+        <i class="fa fa-check-circle" aria-hidden="true"></i><br />
+        <small>Not a Valid Value!</small>
+      </div>
+
+      <div class="form-control">
+        <label>How many digits would you like?</label><br />
+        <input type="digits" placeholder = "2" id="digits"/>
+        <i class="fa fa-check-circle" aria-hidden="true"></i><br />
+        <small>Not a Valid Value!</small>
+      </div>
+
+      <div class="form-control">
+        <label>Capitalization </label><i class="fa fa-check-circle" aria-hidden="true"></i><br />
+        <input type="checkbox" name = "Lowercase" value = "Lowercase" id="lowercase"/>Lowercase<br>
+        <input type="checkbox" name = "Uppercase" value = "Uppercase" id="uppercase"/>Uppercase<br>
+      </div>
+      
+      <button>Submit</button>
     </form>
     <script type="text/javascript" src="Front-End.js"></script>
+    <div>
   </body>
 </html>
